@@ -1,0 +1,56 @@
+{% extends 'sip_calc/base.html' %}
+
+{% block title %}Total Withdrawal{% endblock title %}
+
+{% block body %}
+    <div class="container">
+        Withdrawal frequency guidelines:
+        <br>
+        Enter 1 in withdrawal frequency, if withdrawal frequency is annually
+        <br>
+        Enter 4 in withdrawal frequency, if withdrawal frequency is quarterly
+        <br>
+        Enter 12 in withdrawal frequency, if withdrawal frequency is monthly
+        <br>
+    </div>
+
+    <div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="number" name="initial_investment">Initial Investment
+            <br>
+            <input type="number" name="withdrawal_amount">Withdrawl Amount
+            <br>
+            <input type="number" name="withdrawal_frequency">No. of withdrawals in a year
+            <br>
+            <input type="number" name="rate_of_return" step="0.001">ROI
+            <br>
+            <input type="number" name="inflation_rate" step="0.001">Inflation Rate
+            <br>
+            <input type="number" name="investment_duration">Investment Duration
+            <br>
+            <button type="submit">Submit</button>
+            <br>
+        </form>
+    </div>
+
+    <div>
+        Initial Investment: {{ initial_investment }}
+        <br>
+        Withdrawal Amount: {{ withdrawal_amount }}
+        <br>
+        Withdrawal Frequency: {{ withdrawal_frequency }}
+        <br>
+        Total Amount Withdrawn: {{ total_amount_withdrawn }}
+        <br>
+        No. of Withdrawals: {{ num_withdrawals }}
+        <br>
+        ROI: {{ rate_of_return }}
+        <br>
+        Inflation Rate: {{ inflation_rate }}
+        <br>
+        Investment Duration: {{ investment_duration }}
+        <br>
+
+    </div>
+{% endblock body %}

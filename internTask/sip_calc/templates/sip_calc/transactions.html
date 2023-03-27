@@ -1,0 +1,28 @@
+{% extends 'sip_calc/base.html' %}
+
+{% block title %} Transactions {% endblock title %}
+
+{% block body %}
+    <form action="" method="post">
+        {% csrf_token %}
+        Initial Investment: <input type="text" name="initial_investment" required>
+        <br>
+        Withdrawal Amount: <input type="text" name="withdrawal_amount" required>
+        <br>
+        No. of withdrawals: <input type="text" name="num_withdrawals" required>
+        <br>
+        Inflation Rate: <input type="text" name="inflation_rate" step="0.001" required>
+        <br>
+        Rate of Return: <input type="text" name="rate_of_return" step="0.001" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div>
+        {% for k in dict %}
+            {{forloop.counter}} : {{k}}
+            <br>
+        {% endfor %}
+        <br>
+    </div>
+{% endblock body %}

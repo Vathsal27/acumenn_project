@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    <div class="card" style="width: 18rem;">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+        <h5 class="card-title">SIP requeired for Target Future Value</h5>
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <a href="{% url 'sip_calculate'%}" class="btn btn-primary">Click Here</a>
+    </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+        <h5 class="card-title">No. of withdrawals until depleted</h5>
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <a href="{% url 'num_until_depleted'%}" class="btn btn-primary">Click Here</a>
+    </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+        <h5 class="card-title">Total Withdrawn</h5>
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <a href="{% url 'total_withdrawn'%}" class="btn btn-primary">Click Here</a>
+    </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+        <h5 class="card-title">Transactions</h5>
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <a href="{% url 'transactions'%}" class="btn btn-primary">Click Here</a>
+    </div>
+    </div>
+
+
+    <!-- <a href="{% url 'sip_calculate'%}">SIP Calculation</a>
+    <a href="{% url 'num_until_depleted'%}">Number of withdrawals allowed</a>
+    <a href="{% url 'total_withdrawn'%}">Total Withdrawal</a> -->
+</body> 
+</html>

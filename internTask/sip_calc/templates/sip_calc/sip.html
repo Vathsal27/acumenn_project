@@ -1,0 +1,29 @@
+{% extends 'sip_calc/base.html' %}
+
+{% block title %}SIP Calculation{% endblock title %}
+
+{% block body %}
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="target_value" required>Target Value
+            <br>
+            <input type="text" name="rate" required>Annual rate of return
+            <br>
+            <input type="text" name="years" required>Years
+            <br>
+            <button type="submit">Submit</button>
+            <br>
+        </div> 
+    </form>
+    
+    <div>
+        SIP Value: {{ ans }}
+        <br>
+        Final Target: {{ target }}
+        <br>
+        Duration(in years): {{ years }}
+        <br>
+        Annual Rate: {{ rate }}
+    </div>
+{% endblock body %}

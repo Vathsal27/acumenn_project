@@ -1,0 +1,46 @@
+{% extends 'sip_calc/base.html' %}
+
+{% block title %}Withdrawal Depletion{% endblock title %}
+
+{% block body %}
+    <div class="container">
+        Withdrawal frequency guidelines:
+        <br>
+        Enter 1 in withdrawal frequency, if withdrawal frequency is annually
+        <br>
+        Enter 4 in withdrawal frequency, if withdrawal frequency is quarterly
+        <br>
+        Enter 12 in withdrawal frequency, if withdrawal frequency is monthly
+        <br>
+    </div>
+
+    <div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="text" name="initial_investment" required>Initial Investment
+            <br>
+            <input type="text" name="withdrawl_amount" required>Withdrawl Amount
+            <br>
+            <input type="text" name="withdrawl_frequency" required>Withdrawal Frequency
+            <br>
+            <input type="text" name="roi" step="0.001" required>ROI
+            <br>
+            <input type="text" name="inflation_rate" step="0.001" required>Inflation Rate
+            <br>
+            <button type="submit">Submit</button>
+            <br>
+
+            No. of withdrawals: {{ num_of_withdrawals }}
+            <br>
+            Initial Investment: {{ initial_investment }}
+            <br>
+            Withdrawl Amount: {{ withdrawl_amount }}
+            <br>
+            Withdrawal Frequency: {{ withdrawl_frequency }}
+            <br>
+            ROI: {{ roi }}
+            <br>
+            Inflation Rate: {{ inflation_rate }}
+        </form>
+    </div>
+{% endblock body %}
